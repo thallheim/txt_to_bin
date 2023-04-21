@@ -16,8 +16,8 @@ int main(int argc, char *argv[]) {
   FILE *text_file, *binary_file;
   char ch;
 
-  // If launched with no arguments
-    if (!argv[1]) {
+ 
+    if (!argv[1]) { // If launched with no arguments
       printf("ERROR: No input file provided. Exiting.\nFor help: use 't2b help'");
     } else if (strcmp(argv[1], help_flag) == 0) { //If help is invoked
       printf("\nUsage: t2b.exe [Input file]");
