@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
     }
         
     binary_file = fopen("OUTPUT.bin", "wb");
-   if (binary_file == NULL) {
+    if (binary_file == NULL) {
       printf("ERROR: Failed to write output binary.");
     }
  
