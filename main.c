@@ -1,30 +1,34 @@
 /*
   TODO:
 - Add parsing for output path
-- Add usage string(s)
 - ???
 
 */
 
 #include <stdio.h>
 #include <errno.h>
+#include <string.h>
 
 int main(int argc, char *argv[]) {
 
-  
-    FILE *text_file, *binary_file;
-    char ch;
+  char help_flag[] = "help";
+      
+  FILE *text_file, *binary_file;
+  char ch;
 
+  // If launched with no arguments
     if (!argv[1]) {
-      printf("ERROR: No input file provided. Exiting.");
-    } else {
-
+      printf("ERROR: No input file provided. Exiting.\nFor help: use 't2b help'");
+    } else if (strcmp(argv[1], help_flag) == 0) { //If help is invoked
+      printf("\nUsage: t2b.exe [Input file]");
+    }
+    else { // Open input file for reading
       text_file = fopen(argv[1], "r");
       if (text_file == NULL) {
 	printf("ERROR: Failed to open input file: %s", argv[1]);
       }
         
-      binary_file = fopen("OUTPUT.bin", "wb");
+      binary_file = fopen("OUTPUT.bin", "wb"); // Open output file for writing
       if (binary_file == NULL) {
 	printf("ERROR: Failed to write output binary.");
       }
@@ -39,4 +43,5 @@ int main(int argc, char *argv[]) {
     }
     
     return 0;
+  
 }
