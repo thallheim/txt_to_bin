@@ -1,3 +1,11 @@
+/*
+  TODO:
+- Add parsing for output path
+- Add usage string(s)
+- ???
+
+*/
+
 #include <stdio.h>
 #include <errno.h>
 
